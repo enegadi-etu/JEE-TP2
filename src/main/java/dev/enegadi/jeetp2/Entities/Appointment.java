@@ -16,6 +16,7 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
+    @Enumerated(EnumType.STRING)
     private STATUS status;
     @ManyToOne
     private Patient patient;
