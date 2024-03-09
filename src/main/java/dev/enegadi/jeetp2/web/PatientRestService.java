@@ -2,6 +2,8 @@ package dev.enegadi.jeetp2.web;
 
 import dev.enegadi.jeetp2.Entities.Patient;
 import dev.enegadi.jeetp2.Reposotories.PatientRepository;
+import dev.enegadi.jeetp2.Services.HospitalServiceImpl;
+import dev.enegadi.jeetp2.Services.IHospitalService;
 import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,15 +15,15 @@ import java.util.List;
 @RestController
 public class PatientRestService {
     @Autowired
-    private PatientRepository patientRepository;
+    private IHospitalService hospitalServiceImpl;
 
     @GetMapping("/patients")
     public List<Patient> getAllPatients(){
-        return patientRepository.findAll();
+        return hospitalServiceImpl.getAllPatients() ;
     }
 
     @GetMapping("/patients/{id}")
     public Patient getPatientById(@PathVariable long id){
-        return patientRepository.findById(id).get();
+        return hospitalServiceImpl.getPatientById(id);
     }
 }
