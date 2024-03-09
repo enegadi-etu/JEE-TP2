@@ -29,14 +29,14 @@ public class JeeTp2Application {
     CommandLineRunner start(IHospitalService hospitalServiceImpl) {
         return args -> {
 
-            Patient patient = hospitalServiceImpl.getPatientById(1L);
-            Doctor doctor = hospitalServiceImpl.getDoctorById(1L);
-            Appointment appointment = new Appointment();
-            appointment.setDate(new Date());
-            appointment.setStatus(STATUS.PENDING);
-            appointment.setDoctor(doctor);
-            appointment.setPatient(patient);
-            hospitalServiceImpl.saveAppointment(appointment);
+//            Patient patient = hospitalServiceImpl.getPatientById(1L);
+//            Doctor doctor = hospitalServiceImpl.getDoctorById(1L);
+//            Appointment appointment = new Appointment();
+//            appointment.setDate(new Date());
+//            appointment.setStatus(STATUS.PENDING);
+//            appointment.setDoctor(doctor);
+//            appointment.setPatient(patient);
+//            hospitalServiceImpl.saveAppointment(appointment);
 
         };
     }

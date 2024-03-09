@@ -1,5 +1,6 @@
 package dev.enegadi.jeetp2.Entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,7 @@ public class Consultation {
     private Date date;
     private String rapport;
     @OneToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Appointment appointment;
 
 
